@@ -1,19 +1,10 @@
-import { useState, useEffect } from "react";
-import "./App.css";
+import React, { useState } from "react";
+import Navbar from "./Navbar";
+import "bootstrap/dist/css/bootstrap.min.css";
+import "bootstrap/dist/js/bootstrap.bundle.min.js";
 
 const App = () => {
-  const [count, setCount] = useState(0);
-
-  const onButtonClick = () => {
-    setCount(count + 1);
-  };
-
-  return (
-    <>
-      <button onClick={onButtonClick}>Click me!</button>
-      <p>Count: {count}</p>
-    </>
-  );
+  return <Navbar></Navbar>;
 };
 
 export default App;
