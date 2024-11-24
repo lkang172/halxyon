@@ -1,14 +1,17 @@
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
+import dotenv from "dotenv";
+
+dotenv.config();
 
 const firebaseConfig = {
-  apiKey: "AIzaSyACTecQ3pfKMgVH97khC9VVzL6OSSAQkv0",
+  apiKey: process.env.GOOGLE_API_KEY,
   authDomain: "phoenix-c1efd.firebaseapp.com",
   projectId: "phoenix-c1efd",
   storageBucket: "phoenix-c1efd.firebasestorage.app",
-  messagingSenderId: "902488755459",
-  appId: "1:902488755459:web:2c87a374ef9de7b34a2d36",
+  messagingSenderId: process.env.MESSAGING_SENDER_ID,
+  appId: process.env.APP_ID,
   measurementId: "G-XHE7HTYXL2",
 };
 
