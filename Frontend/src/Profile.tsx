@@ -1,6 +1,6 @@
 import { GoogleAuthProvider } from "firebase/auth/web-extension";
 import { getAuth, signInWithPopup } from "firebase/auth";
-import { auth } from "../Firebase/firebaseConfig";
+import { auth } from "../../Backend/Firebase/firebaseConfig";
 
 const Profile = () => {
   const handleLogin = (e: React.MouseEvent<HTMLButtonElement>) => {
