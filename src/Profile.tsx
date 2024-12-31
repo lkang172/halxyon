@@ -1,17 +1,14 @@
-import { GoogleAuthProvider } from "firebase/auth/web-extension";
-import { getAuth, signInWithPopup } from "firebase/auth";
-import { auth } from "../../Backend/Firebase/firebaseConfig";
+import Navbar from "./Navbar";
+import { GoogleAuthProvider, signInWithPopup } from "firebase/auth";
+import { auth } from "../Backend/Firebase/firebaseConfig.ts";
 
 const Profile = () => {
-  const handleLogin = (e: React.MouseEvent<HTMLButtonElement>) => {
-    const provider = new GoogleAuthProvider();
+  const handleGoogle = async () => {
+    const provider = await new GoogleAuthProvider();
+    return signInWithPopup(auth, provider);
   };
-  return (
-    <>
-      <h1>Log in or sign up:</h1>
-      <button onClick={handleLogin}>Log in</button>
-    </>
-  );
+
+  return <button onClick={handleGoogle}>Sign in</button>;
 };
 
 export default Profile;

@@ -1,22 +1,20 @@
+// Import the functions you need from the SDKs you need
 import { initializeApp } from "firebase/app";
 import { getAnalytics } from "firebase/analytics";
 import { getAuth } from "firebase/auth";
-import dotenv from "dotenv";
 
-dotenv.config();
-
-const firebaseConfig = {
-  apiKey: process.env.GOOGLE_API_KEY,
-  authDomain: "phoenix-c1efd.firebaseapp.com",
-  projectId: "phoenix-c1efd",
+export const firebaseConfig = {
+  apiKey: import.meta.env.VITE_APP_API_KEY,
+  authDomain: import.meta.env.VITE_APP_AUTH_DOMAIN,
+  projectId: import.meta.env.VITE_APP_PROJ_ID,
   storageBucket: "phoenix-c1efd.firebasestorage.app",
-  messagingSenderId: process.env.MESSAGING_SENDER_ID,
-  appId: process.env.APP_ID,
-  measurementId: "G-XHE7HTYXL2",
+  messagingSenderId: import.meta.env.VITE_APP_SENDER_ID,
+  appId: import.meta.env.VITE_APP_APP_ID,
+  measurementId: import.meta.env.VITE_APP_MEAS_ID,
 };
 
 // Initialize Firebase
 const app = initializeApp(firebaseConfig);
-export const auth = getAuth(app);
-export default auth;
 const analytics = getAnalytics(app);
+export const auth = getAuth(app);
+export default app;
