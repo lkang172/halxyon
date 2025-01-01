@@ -7,7 +7,7 @@ const Profile = () => {
     const provider = await new GoogleAuthProvider();
     return signInWithPopup(auth, provider);
   };
-
+  <h1>Happy new year!</h1>;
   return <button onClick={handleGoogle}>Sign in</button>;
 };
 
