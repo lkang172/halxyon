@@ -7,8 +7,9 @@ import {
   signInWithEmailAndPassword,
   User,
 } from "firebase/auth";
+import { doc, getDoc, setDoc, serverTimestamp } from "firebase/firestore";
 import { useState, useEffect } from "react";
-import app, { auth } from "../Backend/Firebase/firebaseConfig.ts";
+import app, { auth, db } from "../Backend/Firebase/firebaseConfig.ts";
 
 const Profile = () => {
   const [user, setUser] = useState<User | null>(null);
@@ -22,10 +23,22 @@ const Profile = () => {
   };
 
   useEffect(() => {
-    onAuthStateChanged(auth, (user) => {
+    onAuthStateChanged(auth, async (user) => {
       if (user) {
         setUser(user);
-        console.log("Welcome, " + user.displayName);
+        const userRef = doc(db, "users", user.uid);
+        const docSnap = await getDoc(userRef);
+
+        if (!docSnap.exists()) {
+          await setDoc(userRef, {
+            name: user.displayName,
+            email: user.email,
+            createdAt: serverTimestamp(),
+            bookshelf: [],
+            followers: [],
+            following: [],
+          });
+        }
       } else {
         console.log("No user is signed in");
       }
