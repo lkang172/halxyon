@@ -51,9 +51,7 @@ const Navbar = () => {
                 aria-label="Search"
               />
               <Link to="/profile">
-                <button className="btn btn-outline-success" type="submit">
-                  Profile
-                </button>
+                <button>Profile</button>
               </Link>
             </form>
           </div>

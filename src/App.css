@@ -50,7 +50,7 @@ body {
 }
 
 button {
-  background-color: rgb(20, 20, 70);
+  background-color: rgb(30, 30, 90);
   color: white;
   border: none;
   box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
@@ -63,6 +63,14 @@ button {
 }
 
 button:hover {
-  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 3px 3px 3px rgba(0, 0, 0, 0.3);
   transition: 0.3s;
+}
+
+.btn {
+  color: rgba(0, 0, 0, 0.3);
+}
+
+.btn-outline-success {
+  background-color: rgba(0, 0, 0, 0.3);
 }
