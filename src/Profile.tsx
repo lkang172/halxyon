@@ -27,6 +27,7 @@ const Profile = () => {
       if (user) {
         setUser(user);
         const userRef = doc(db, "users", user.uid);
+        console.log(userRef);
         const docSnap = await getDoc(userRef);
 
         if (!docSnap.exists()) {
@@ -49,7 +50,7 @@ const Profile = () => {
     <>
       <h1>Happy new year!</h1>
       <button onClick={handleGoogle}>Sign in</button>
-      <p>Welcome, {user?.displayName}</p>
+      <p>Welcome, {user?.email}</p>
     </>
   );
 };
