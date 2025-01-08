@@ -5,11 +5,19 @@ import {
   onAuthStateChanged,
   getAuth,
   signInWithEmailAndPassword,
-  User,
 } from "firebase/auth";
 import { doc, getDoc, setDoc, serverTimestamp } from "firebase/firestore";
 import { useState, useEffect } from "react";
 import app, { auth, db } from "../Backend/Firebase/firebaseConfig.ts";
+
+interface User {
+  name: string;
+  email: string;
+  createdAt: any;
+  bookshelf: string[];
+  followers: User[];
+  following: User[];
+}
 
 const Profile = () => {
   const [user, setUser] = useState<User | null>(null);
@@ -25,9 +33,7 @@ const Profile = () => {
   useEffect(() => {
     onAuthStateChanged(auth, async (user) => {
       if (user) {
-        setUser(user);
         const userRef = doc(db, "users", user.uid);
-        console.log(userRef);
         const docSnap = await getDoc(userRef);
 
         if (!docSnap.exists()) {
@@ -39,8 +45,14 @@ const Profile = () => {
             followers: [],
             following: [],
           });
+
+          setUser(docSnap.data() as User);
+        } else {
+          setUser(docSnap.data() as User);
+          console.log(docSnap.data());
         }
       } else {
+        setUser(null);
         console.log("No user is signed in");
       }
     });
@@ -48,9 +60,9 @@ const Profile = () => {
 
   return (
     <>
-      <h1>Happy new year!</h1>
+      <h1>Sign in or Create Account</h1>
       <button onClick={handleGoogle}>Sign in</button>
-      <p>Welcome, {user?.email}</p>
+      <p>Welcome, {user?.name}</p>
     </>
   );
 };
