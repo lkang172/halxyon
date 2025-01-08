@@ -13,6 +13,5 @@
   "references": [
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
-  ],
-  "include": ["src", "src/**/*.js", "Backend/Firebase/firebaseConfigg.js"]
+  ]
 }
