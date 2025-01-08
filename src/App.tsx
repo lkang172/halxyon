@@ -7,7 +7,7 @@ import {
   Routes,
   Navigate,
 } from "react-router-dom";
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { User } from "./Login";
 import Profile from "./Profile";
 import Login from "./Login";

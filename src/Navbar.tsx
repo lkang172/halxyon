@@ -1,13 +1,11 @@
 import { Link } from "react-router-dom";
+import "./App.css";
 
 const Navbar = () => {
   return (
     <>
-      <nav className="navbar navbar-expand-lg bg-body-tertiary">
+      <nav className="navbar navbar-expand-lg">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
-            <Link to="/">Halxyon</Link>
-          </a>
           <button
             className="navbar-toggler"
             type="button"
@@ -22,7 +20,20 @@ const Navbar = () => {
           <div className="collapse navbar-collapse" id="navbarSupportedContent">
             <ul className="navbar-nav me-auto mb-2 mb-lg-0">
               <li className="nav-item">
-                <Link to="/" className="nav-link active" area-current="page">
+                <Link
+                  to="/home"
+                  className="nav-link active"
+                  area-current="page"
+                >
+                  [[HALXYON]]
+                </Link>
+              </li>
+              <li className="nav-item">
+                <Link
+                  to="/feed"
+                  className="nav-link active"
+                  area-current="page"
+                >
                   Home
                 </Link>
               </li>

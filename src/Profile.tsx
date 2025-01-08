@@ -8,7 +8,7 @@ interface ProfileProps {
 const Profile = ({ user, setUser }: ProfileProps) => {
   return (
     <>
-      <p>Welcome to your profile, {user?.email}</p>
+      <p>Welcome to your profile, {user?.name}</p>
       <button onClick={() => handleLogout(setUser)}>Logout</button>
     </>
   );

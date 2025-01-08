@@ -1,42 +1,68 @@
-#root {
-  max-width: 1280px;
-  margin: 0 auto;
-  padding: 2rem;
-  text-align: center;
+* {
+  font-family: "Gabarito", serif;
+  font-optical-sizing: auto;
+  font-style: normal;
 }
 
-.logo {
-  height: 6em;
-  padding: 1.5em;
-  will-change: filter;
-  transition: filter 300ms;
-}
-.logo:hover {
-  filter: drop-shadow(0 0 2em #646cffaa);
-}
-.logo.react:hover {
-  filter: drop-shadow(0 0 2em #61dafbaa);
+body {
+  background: rgb(130, 234, 255);
+  background: linear-gradient(
+    144deg,
+    rgba(130, 234, 255, 1) 0%,
+    rgba(58, 58, 160, 1) 46%,
+    rgba(24, 20, 92, 1) 92%
+  );
+
+  filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#F40752", endColorstr="#F9AB8F", GradientType=1 );
+  background-repeat: no-repeat;
+  background-size: fill;
+  align-items: center;
+  justify-content: center;
 }
 
-@keyframes logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.navbar {
+  background-color: white;
+  box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3);
+  position: absolute;
+  height: 10vh;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  a:nth-of-type(2) .logo {
-    animation: logo-spin infinite 20s linear;
-  }
+.nav-item {
+  font-size: 1.7em;
+  margin-right: 1.1em;
 }
 
-.card {
-  padding: 2em;
+.home-container {
+  height: 90vh;
+  width: 60vw;
+  font-size: 1.4em;
+  margin: 15vh 0 0 15vw;
 }
 
-.read-the-docs {
-  color: #888;
+.home-container h1 {
+  color: white;
+  font-size: 4em;
+}
+
+.home-container p {
+  color: white;
+  text-shadow: 1px 1px 1px rgba(0, 0, 0, 0.6);
+}
+
+button {
+  background-color: rgb(20, 20, 70);
+  color: white;
+  border: none;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+  border-radius: 5px !important;
+  padding: 10px 15px;
+  font-size: 16px;
+  cursor: pointer;
+  transition: 0.3s;
+  align-items: center;
+}
+
+button:hover {
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.3);
+  transition: 0.3s;
 }
