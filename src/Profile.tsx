@@ -49,7 +49,6 @@ const Profile = () => {
           setUser(docSnap.data() as User);
         } else {
           setUser(docSnap.data() as User);
-          console.log(docSnap.data());
         }
       } else {
         setUser(null);
