@@ -11,6 +11,8 @@ import { useState } from "react";
 import { User } from "./Login";
 import Profile from "./Profile";
 import Login from "./Login";
+import Home from "./Home";
+import Feed from "./Feed";
 
 const App = () => {
   const [user, setUser] = useState<User | null>(null);
