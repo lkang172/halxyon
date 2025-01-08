@@ -5,6 +5,7 @@
     "moduleResolution": "Bundler",
     "skipLibCheck": true,
     "allowJs": true,
+    "noEmit": true,
     "paths": {
       "@/*": ["./src/*"]
     }
@@ -13,5 +14,5 @@
     { "path": "./tsconfig.app.json" },
     { "path": "./tsconfig.node.json" }
   ],
-  "include": ["src", "vite-env.d.ts"]
+  "include": ["src", "src/**/*.js", "Backend/Firebase/firebaseConfigg.js"]
 }

@@ -10,7 +10,7 @@
 
     /* Bundler mode */
     "moduleResolution": "Bundler",
-    "allowImportingTsExtensions": false,
+    "allowImportingTsExtensions": true,
     "isolatedModules": true,
     "moduleDetection": "force",
     "noEmit": false,
@@ -23,5 +23,9 @@
     "noFallthroughCasesInSwitch": true,
     "noUncheckedSideEffectImports": true
   },
-  "include": ["src", "Frontend/src/Profile.tsx"]
+  "include": [
+    "src",
+    "Frontend/src/Profile.tsx",
+    "Backend/Firebase/firebaseConfig.d.ts"
+  ]
 }
