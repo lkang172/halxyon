@@ -1,10 +1,15 @@
 import { User, handleLogout } from "./Login.tsx";
 
-const Profile = ({ user }: { user: User | null }) => {
+interface ProfileProps {
+  user: User | null;
+  setUser: React.Dispatch<React.SetStateAction<User | null>>;
+}
+
+const Profile = ({ user, setUser }: ProfileProps) => {
   return (
     <>
       <p>Welcome to your profile, {user?.email}</p>
-      <button onClick={handleLogout}>Logout</button>
+      <button onClick={() => handleLogout(setUser)}>Logout</button>
     </>
   );
 };
