@@ -8,7 +8,7 @@ import {
   signOut,
 } from "firebase/auth";
 import { doc, getDoc, setDoc, serverTimestamp } from "firebase/firestore";
-import { useState, useEffect, Dispatch, SetStateAction } from "react";
+import React, { useState, useEffect, Dispatch, SetStateAction } from "react";
 import app, { auth, db } from "../Backend/Firebase/firebaseConfig.ts";
 
 export interface User {
@@ -22,18 +22,20 @@ export interface User {
 
 interface LoginProps {
   setUser: Dispatch<SetStateAction<User | null>>;
-  user: User | null;
 }
 
-export const handleLogout = async () => {
+export const handleLogout = async (
+  setUser: React.Dispatch<SetStateAction<User | null>>
+) => {
   try {
     await signOut(auth);
+    setUser(null);
   } catch (error) {
     console.error("Error signing out: ", error);
   }
 };
 
-const Login: React.FC<LoginProps> = ({ user, setUser }) => {
+const Login: React.FC<LoginProps> = ({ setUser }) => {
   const handleGoogle = async () => {
     const provider = await new GoogleAuthProvider();
     try {
