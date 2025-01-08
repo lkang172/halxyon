@@ -72,7 +72,6 @@ const Login: React.FC<LoginProps> = ({ user, setUser }) => {
     <>
       <h1>Sign in or Create Account</h1>
       <button onClick={handleGoogle}>Sign in</button>
-      <p>Welcome, {user?.name}</p>
     </>
   );
 };
