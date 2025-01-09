@@ -5,9 +5,11 @@
     "moduleResolution": "Bundler",
     "skipLibCheck": true,
     "allowJs": true,
+    "esModuleInterop": true,
     "noEmit": true,
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "types": ["./src/types/global"]
     }
   },
   "references": [

@@ -20,7 +20,6 @@ export const fetchFromApi = async () => {
         ? item.volumeInfo.imageLinks.thumbnail
         : "No image found",
     }));
-    console.log(books);
     return books || [];
   } catch (error) {
     console.error("Error fetching books from Google Books:", error);

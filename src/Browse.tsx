@@ -1,8 +1,11 @@
 import { useState } from "react";
 import "./App.css";
+import { fetchFromApi } from "../Backend/Firebase/fetchGoogleBooks.js";
 
-const Browse: React.FC = () => {
+const Browse = async () => {
   const [flip, setFlip] = useState(false);
+  const bookList = await fetchFromApi();
+  console.log(bookList);
 
   return (
     <>
