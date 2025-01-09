@@ -38,7 +38,11 @@ const Navbar = () => {
                 </Link>
               </li>
               <li className="nav-item">
-                <Link to="/" className="nav-link active" area-current="page">
+                <Link
+                  to="/browse"
+                  className="nav-link active"
+                  area-current="page"
+                >
                   Browse
                 </Link>
               </li>

@@ -13,6 +13,7 @@ import Profile from "./Profile";
 import Login from "./Login";
 import Home from "./Home";
 import Feed from "./Feed";
+import Browse from "./Browse";
 
 const App = () => {
   const [user, setUser] = useState<User | null>(null);
@@ -40,6 +41,7 @@ const App = () => {
             path="/feed"
             element={user ? <Feed user={user} /> : <Navigate to="/home" />}
           />
+          <Route path="/browse" element={<Browse />} />
         </Routes>
       </Router>
     </>

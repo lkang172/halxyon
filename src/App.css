@@ -12,6 +12,7 @@ body {
     rgba(58, 58, 160, 1) 46%,
     rgba(24, 20, 92, 1) 92%
   );
+  height: 100vh;
 
   filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#F40752", endColorstr="#F9AB8F", GradientType=1 );
   background-repeat: no-repeat;
@@ -24,7 +25,6 @@ body {
   background-color: white;
   box-shadow: 0 2px 10px 0 rgba(0, 0, 0, 0.3);
   position: absolute;
-  height: 10vh;
 }
 
 .nav-item {
@@ -33,7 +33,6 @@ body {
 }
 
 .home-container {
-  height: 90vh;
   width: 60vw;
   font-size: 1.4em;
   margin: 15vh 0 0 15vw;
@@ -73,4 +72,8 @@ button:hover {
 
 .btn-outline-success {
   background-color: rgba(0, 0, 0, 0.3);
+}
+
+.card {
+  width: 50vw;
 }
