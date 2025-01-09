@@ -13,6 +13,7 @@ body {
     rgba(24, 20, 92, 1) 92%
   );
   height: 100vh;
+  overflow: hidden;
 
   filter: progid: DXImageTransform.Microsoft.gradient( startColorstr="#F40752", endColorstr="#F9AB8F", GradientType=1 );
   background-repeat: no-repeat;
@@ -74,6 +75,42 @@ button:hover {
   background-color: rgba(0, 0, 0, 0.3);
 }
 
+.container {
+  perspective: 1000px;
+}
+
 .card {
-  width: 50vw;
+  height: 80vh !important;
+  width: 25vw;
+  margin: 5vh auto 0 auto;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  transform-style: preserve-3d;
+  padding: 30px;
+  box-shadow: 2px 2px 2px rgba(0, 0, 0, 0.1);
+  cursor: pointer;
+  transition: transform 0.6s;
+  transform: rotateY(var(--rotate-y, 0));
+}
+
+.card.flip {
+  transform: rotateY(180deg);
+}
+
+.card .front,
+.card .back {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  backface-visibility: hidden;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  overflow: hidden;
+}
+
+.card .back {
+  transform: rotateY(180deg);
 }
