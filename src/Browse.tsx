@@ -34,38 +34,3 @@ const Browse = () => {
 };
 
 export default Browse;
-
-/*
-import { useState } from "react";
-import "./App.css";
-import { fetchFromApi } from "../Backend/Firebase/fetchGoogleBooks.ts";
-
-const Browse = async () => {
-  const [flip, setFlip] = useState(false);
-  const bookList = await fetchFromApi();
-
-  return (
-    <>
-      <div className="container">
-        <div
-          className={`card ${flip ? "flip" : ""}`}
-          onClick={() => setFlip(!flip)}
-        >
-          <div className="front">
-            <p>*cover image below*</p>
-            <img src={bookList[0].image} />
-          </div>
-          <div className="back" onClick={() => setFlip(!flip)}>
-            <h1>{bookList[0].title}</h1>
-            <p>{bookList[0].author}</p>
-            <p>{bookList[0].pageCount}</p>
-            <p>Summary</p>
-          </div>
-        </div>
-      </div>
-    </>
-  );
-};
-
-export default Browse;
-*/
