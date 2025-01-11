@@ -14,6 +14,7 @@ export const fetchFromApi = async () => {
       image: item.volumeInfo.imageLinks
         ? item.volumeInfo.imageLinks.thumbnail
         : "No image found",
+      description: item.volumeInfo.description || "No description found",
     }));
     return books || [];
   } catch (error) {

@@ -43,7 +43,6 @@ var fetchFromApi = function () { return __awaiter(void 0, void 0, void 0, functi
         switch (_a.label) {
             case 0:
                 searchQueries = [];
-                console.log("hello");
                 _a.label = 1;
             case 1:
                 _a.trys.push([1, 4, , 5]);
@@ -74,4 +73,3 @@ var fetchFromApi = function () { return __awaiter(void 0, void 0, void 0, functi
     });
 }); };
 exports.fetchFromApi = fetchFromApi;
-(0, exports.fetchFromApi)();

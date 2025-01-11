@@ -17,16 +17,21 @@ const Browse = () => {
           className={`card ${flip ? "flip" : ""}`}
           onClick={() => setFlip(!flip)}
         >
-          <div className="front">
-            <p>*cover image below*</p>
-            <img src={books[0].image} />
-          </div>
-          <div className="back" onClick={() => setFlip(!flip)}>
-            <h1>{books[0].title}</h1>
-            <p>{books[0].authors[0]}</p>
-            <p>{books[0].pageCount}</p>
-            <p></p>
-          </div>
+          {books.length > 0 && (
+            <>
+              <div className="front">
+                <h1>{books[0].title}</h1>
+                <img src={books[0].image} />
+              </div>
+              <div className="back" onClick={() => setFlip(!flip)}>
+                <h1>{books[0].title}</h1>
+                <p>{books[0].authors[0]}</p>
+                <p>{books[0].pageCount}</p>
+                <p>{books[0].description}</p>
+                <p></p>
+              </div>
+            </>
+          )}
         </div>
       </div>
     </>
