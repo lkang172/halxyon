@@ -10,6 +10,11 @@ const Browse = () => {
     fetchFromApi().then(setBooks);
   }, []);
 
+  const nextBook = () => {
+    setFlip(false);
+    books.length > 1 ? setBooks(books.slice(1)) : fetchFromApi().then(setBooks);
+  };
+
   return (
     <>
       <div className="container">
@@ -25,14 +30,19 @@ const Browse = () => {
               </div>
               <div className="back" onClick={() => setFlip(!flip)}>
                 <h1>{books[0].title}</h1>
-                <p>{books[0].authors[0]}</p>
-                <p>{books[0].pageCount}</p>
+                <p>Author: {books[0].authors[0]}</p>
+                <p>Pages: {books[0].pageCount}</p>
                 <p>{books[0].description}</p>
                 <p></p>
               </div>
             </>
           )}
         </div>
+        <center>
+          <button id="next" onClick={nextBook}>
+            Next
+          </button>
+        </center>
       </div>
     </>
   );

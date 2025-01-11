@@ -113,4 +113,14 @@ button:hover {
 
 .card .back {
   transform: rotateY(180deg);
+  overflow: scroll;
+}
+
+.front img {
+  height: 100%;
+}
+
+.back {
+  padding: 40px;
+  overflow: scroll;
 }
