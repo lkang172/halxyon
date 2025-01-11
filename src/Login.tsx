@@ -9,7 +9,7 @@ import {
 } from "firebase/auth";
 import { doc, getDoc, setDoc, serverTimestamp } from "firebase/firestore";
 import React, { useState, useEffect, Dispatch, SetStateAction } from "react";
-import app, { auth, db } from "../Backend/Firebase/firebaseConfig.ts";
+import app, { auth, db } from "../Backend/firebaseConfig.ts";
 
 export interface User {
   name: string;

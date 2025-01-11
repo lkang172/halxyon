@@ -24,5 +24,5 @@ dist-ssr
 *.sw?
 
 .env
-firebaseConfig.ts
-Backend/Firebase/fetchGoogleBooks.ts
+Backend/firebaseConfig.ts
+Backend/fetchGoogleBooks.ts

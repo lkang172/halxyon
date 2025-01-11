@@ -1,6 +1,6 @@
 import { useState, useEffect } from "react";
 import "./App.css";
-import { fetchFromApi } from "../Backend/Firebase/fetchGoogleBooks.ts";
+import { fetchFromApi } from "../Backend/fetchGoogleBooks.ts";
 
 const Browse = () => {
   const [flip, setFlip] = useState(false);
