@@ -42,6 +42,7 @@ const Browse = () => {
           <button id="next" onClick={nextBook}>
             Next
           </button>
+          <p>hello world</p>
         </center>
       </div>
     </>
